@@ -1,7 +1,10 @@
 import './styles.css';
 import { ContextMenu } from './menu.js';
 
+import {CustomMessageModule} from './modules/custom-message.module.js'
+
 const menu = new ContextMenu('#menu');
+const customMessage = new CustomMessageModule();
 
 menu.add({
   text: 'Считать клики (за 3 секунды)',
@@ -25,7 +28,7 @@ menu.add({
 menu.add({
   text: 'Кастомное сообщение',
   onClick: () => {
-    console.log('Кастомное сообщение');
+    customMessage.trigger();
   },
 });
 
