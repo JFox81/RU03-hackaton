@@ -1,7 +1,9 @@
 import './styles.css';
 import { ContextMenu } from './menu.js';
+import { TimerMoudle } from './modules/timer.module.js';
 
 const menu = new ContextMenu('#menu');
+const timer = new TimerMoudle('count_timer', 'Таймер отсчета');
 
 menu.add({
   text: 'Считать клики (за 3 секунды)',
@@ -19,7 +21,7 @@ menu.add({
 menu.add({
   text: 'Таймер отсчета',
   onClick: () => {
-    console.log('Таймер отсчета');
+    timer.trigger();
   },
 });
 menu.add({

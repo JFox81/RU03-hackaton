@@ -40,3 +40,19 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.timer {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.timer__btn {
+    width: 200px;
+    height: 30px;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+}
