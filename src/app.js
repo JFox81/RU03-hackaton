@@ -1,7 +1,9 @@
 import './styles.css';
 import { ContextMenu } from './menu.js';
+import { BackgroundModule } from './modules/background.module.js';
 
 const menu = new ContextMenu('#menu');
+const backgroundModule = new BackgroundModule();
 
 menu.add({
   text: 'Считать клики (за 3 секунды)',
@@ -32,7 +34,7 @@ menu.add({
 menu.add({
   text: 'Случайный фон',
   onClick: () => {
-    console.log('Случайный фон');
+    backgroundModule.trigger();
   },
 });
 menu.add({
