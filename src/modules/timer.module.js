@@ -28,8 +28,7 @@ export class TimerMoudle extends Module {
     this.form.append(this.input, this.button);
     this.container.append(this.form, this.counter);
     this.body.append(this.container);
-  }
-
+  };
   trigger() {
     this.createTimerElements();
     this.form.addEventListener('submit', event => {
