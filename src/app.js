@@ -1,9 +1,14 @@
 import './styles.css';
 import { ContextMenu } from './menu.js';
+import { TimerMoudle } from './modules/timer.module.js';
+import { PaitingModule } from './modules/paiting.module.js';
 import { BackgroundModule } from './modules/background.module.js';
 
 const menu = new ContextMenu('#menu');
+const timer = new TimerMoudle('count_timer', 'Таймер отсчета');
+const painting = new PaitingModule('painting','Граффити-стена');
 const backgroundModule = new BackgroundModule();
+
 
 menu.add({
   text: 'Считать клики (за 3 секунды)',
@@ -21,7 +26,7 @@ menu.add({
 menu.add({
   text: 'Таймер отсчета',
   onClick: () => {
-    console.log('Таймер отсчета');
+    timer.trigger();
   },
 });
 menu.add({
@@ -41,5 +46,11 @@ menu.add({
   text: 'Случайный звук',
   onClick: () => {
     console.log('Случайный звук');
+  },
+});
+menu.add({
+  text: 'Граффити - стена',
+  onClick: () => {
+    painting.trigger();
   },
 });
