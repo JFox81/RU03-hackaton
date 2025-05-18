@@ -5,6 +5,7 @@ import { PaitingModule } from './modules/paiting.module.js';
 import { BackgroundModule } from './modules/background.module.js';
 import { CustomMessageModule } from './modules/custom-message.module.js';
 import { VladilenModule } from './modules/vladilen.module.js';
+import { ShapeModule } from './modules/shape.module.js';
 
 const menu = new ContextMenu('#menu');
 const customMessage = new CustomMessageModule();
@@ -12,6 +13,7 @@ const timer = new TimerMoudle('count_timer', 'Таймер отсчета');
 const painting = new PaitingModule('painting', 'Граффити-стена');
 const backgroundModule = new BackgroundModule();
 const vladilenModule = new VladilenModule();
+const shapeModule = new ShapeModule('Создать случайную фигуру');
 
 menu.add({
   text: 'Считать клики (за 3 секунды)',
@@ -21,11 +23,12 @@ menu.add({
 });
 
 menu.add({
-  text: 'Создать фигуру',
+  text: 'Создать случайную фигуру',
   onClick: () => {
-    console.log('Создать фигуру');
+    shapeModule.trigger();
   },
 });
+
 menu.add({
   text: 'Таймер отсчета',
   onClick: () => {
