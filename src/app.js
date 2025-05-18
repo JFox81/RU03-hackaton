@@ -3,8 +3,10 @@ import { ContextMenu } from './menu.js';
 import { TimerMoudle } from './modules/timer.module.js';
 import { PaitingModule } from './modules/paiting.module.js';
 import { BackgroundModule } from './modules/background.module.js';
+import {CustomMessageModule} from './modules/custom-message.module.js'
 
 const menu = new ContextMenu('#menu');
+const customMessage = new CustomMessageModule();
 const timer = new TimerMoudle('count_timer', 'Таймер отсчета');
 const painting = new PaitingModule('painting','Граффити-стена');
 const backgroundModule = new BackgroundModule();
@@ -32,7 +34,7 @@ menu.add({
 menu.add({
   text: 'Кастомное сообщение',
   onClick: () => {
-    console.log('Кастомное сообщение');
+    customMessage.trigger();
   },
 });
 
